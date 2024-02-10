@@ -1,0 +1,24 @@
+:root{
+    --background-color: #E3E1D9;
+    --secondary-color: #B4B4B8;
+    --tertiary-color: #C7C8CC;
+    --success-color: #28ba41;
+    --success-hover: #29b540;
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+li:nth-child(odd){
+    background-color: var(--secondary-color);
+}
+
+li:nth-child(even){
+    background-color: var(--tertiary-color);
+}
+
+li:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

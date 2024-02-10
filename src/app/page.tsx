@@ -9,7 +9,7 @@ export default function Home() {
   const [todoItems, setTodoItems]: TaskState = useState([]);
   const [taskValue, setTaskvalue]: StringState = useState("");
 
-  function add_button_clicked(){
+  function add_button_clicked(): void{
     if(taskValue === ""){
       return;
     }
@@ -19,7 +19,7 @@ export default function Home() {
     setTaskvalue("")
   }
 
-  function handleInputChange(e: ChangeEvent){
+  function handleInputChange(e: ChangeEvent): void{
     setTaskvalue(e.target.value);
   }
 
@@ -32,24 +32,27 @@ export default function Home() {
               item: TodoTask, 
               index: number
               ) =>( 
-              <li key={index}>{item.makeTag()}</li>
+              <li key={index}>
+                  {item.makeTag()}
+              </li>
             ))
           }
+          <li className={styles.inputContainer}>
+            <input 
+              type="text" 
+              value={taskValue} 
+              className={styles.taskInput} 
+              onChange={handleInputChange}
+              placeholder="Enter a task"
+            />
+            <button 
+              className={styles.addButton} 
+              onClick={add_button_clicked}>
+                Add
+            </button>
+          </li>
         </ul>
         <div className={styles.contentDiv}>
-          <input 
-            type="text" 
-            value={taskValue} 
-            className={styles.taskInput} 
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className={styles.contentDiv}>
-          <button 
-            className={styles.addButton} 
-            onClick={add_button_clicked}>
-              Add
-          </button>
         </div>
       </div>
     </main>

@@ -9,7 +9,7 @@ export class TodoTask{
         this.is_completed = false;
     }
 
-    makeTag(){
+    makeTag(): JSX.Element{
         return ((<TodoItem taskValue={this.value} taskStatus={this.is_completed} />));
     }
 }
@@ -17,11 +17,11 @@ export class TodoTask{
 export default function TodoItem(
     { taskValue, taskStatus }:
     { taskValue: string, taskStatus: boolean }
-    ) {
+    ): JSX.Element {
     return (
         <div className={styles.taskRow}>
             <div className={styles.taskCheckBox}>
-                <input type="checkbox" checked={taskStatus} />
+                <input type="checkbox" defaultChecked={taskStatus} />
             </div>
             <div className={styles.taskItem}>
                 <span>{taskValue}</span>
