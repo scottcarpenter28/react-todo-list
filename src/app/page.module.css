@@ -65,7 +65,7 @@
   border-color: var(--secondary-color);
   border-width: 1px;
   display: flex;
-  height: 50px;
+  height: var(--common-height);
   width: 100%;
   padding: 3px 0;
 }
