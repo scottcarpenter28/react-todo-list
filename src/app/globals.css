@@ -1,13 +1,29 @@
 :root{
-    --background-color: #E3E1D9;
-    --secondary-color: #B4B4B8;
-    --tertiary-color: #C7C8CC;
     --success-color: #28ba41;
     --success-hover: #29b540;
 }
 
+@media(prefers-color-scheme: light){
+    :root{
+        --background-color: #E3E1D9;
+        --font-color: black;
+        --secondary-color: #B4B4B8;
+        --tertiary-color: #C7C8CC;
+    }
+}
+
+@media(prefers-color-scheme: dark){
+    :root{
+        --background-color: #222831;
+        --font-color: #DDDDDD;
+        --secondary-color: #222831;
+        --tertiary-color: #30475E;
+    }
+}
+
 body{
     background-color: var(--background-color);
+    color: var(--font-color);
 }
 
 li:nth-child(odd){
