@@ -1,6 +1,8 @@
 :root{
     --success-color: #28ba41;
     --success-hover: #29b540;
+    --border-radius: 10px;
+    --common-height: 2rem;
 }
 
 @media(prefers-color-scheme: light){
@@ -35,6 +37,6 @@ li:nth-child(even){
 }
 
 li:first-child{
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
 }
